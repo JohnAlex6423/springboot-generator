@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    hikari:
+      username:
+      password:
+      jdbc-url:
+      driver-class-name: com.mysql.cj.jdbc.Driver
