@@ -1,3 +1,7 @@
+server:
+  port: 8081
+  context-path: /boot
+
 spring:
   datasource:
     hikari:
@@ -19,17 +23,7 @@ spring:
         min-idle: 0
     timeout: 0
 
-  profiles:
-    active: test
-
 person:
   name: 李青山${random.uuid}
   age: 22
   birthday: 1998/07/18
-
-#debug: true 查看自动配置报告 分析Negative matches:
----
-spring:
-  profiles: test
-server:
-  port: 8082
