@@ -1,4 +1,5 @@
 spring:
+  #datasource
   datasource:
     hikari:
       username: root
@@ -6,6 +7,7 @@ spring:
       jdbc-url: jdbc:mysql://120.26.160.119:3306/springBootGenerate
       driver-class-name: com.mysql.cj.jdbc.Driver
 
+  #redis
   redis:
     database: 0
     host: 120.26.160.119
@@ -20,16 +22,29 @@ spring:
     timeout: 0
 
   profiles:
-    active: test
+    active: dev
 
+#配置类配置信息
 person:
   name: 李青山${random.uuid}
   age: 22
   birthday: 1998/07/18
 
 #debug: true 查看自动配置报告 分析Negative matches:
+#日志级别配置信息
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com:
+      generator: trace
+
+---
+spring:
+  profiles: prod
+server:
+  port: 8082
 ---
 spring:
   profiles: test
 server:
-  port: 8082
+  port: 8083
