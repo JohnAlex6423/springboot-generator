@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleafTest</title>
+</head>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+   <link rel="bookmark" href="/favicon.ico"/>
+<style>
+    .content {
+        width: 400px;
+        text-align: center;
+        height: 200px;
+        background: aquamarine;
+        color: black;
+        margin: 0 auto;
+    }
+</style>
+<body>
+<div class="content">
+    <h2>hello 改革春风吹老鼠</h2>
+    <p>关山难越，谁悲失路之人</p>
+    <p>萍水相逢，尽是他乡之客</p>
+    <div th:text="${who}"></div>
+    <div th:text="${sex}" th:each="sex : ${sex}"></div>
+</div>
+</body>
+</html>

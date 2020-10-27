@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义错误页面</title>
+</head>
+<style>
+    .myError {
+        width: 80%;
+        font-family: "Yu Gothic Medium";
+        font-size: 20px;
+        font-weight: 300;
+        margin: 0 auto;
+        background: antiquewhite;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="myError">没错我今天就是故意错的(4xx)</div>
+    <div class="myError">
+    <h2>status:[[${status}]]</h2>
+    <h2>timestamp:[[${timestamp}]]</h2>
+    <h2>error:[[${error}]]</h2>
+    <h2>exception:[[${exception}]]</h2>
+    <h2>message:[[${message}]]</h2>
+    <h2>errors:[[${errors}]]</h2>
+    <h3>why: [[${why}]]</h3>
+    </div>
+</body>
+</html>

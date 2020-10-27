@@ -8,13 +8,23 @@ group = 'com.generator'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+apply plugin: 'java'
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
 }
 
+//buildScript {
+//	repositories {
+//		maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+//		maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+//	}
+//}
+
 repositories {
+	mavenLocal()
+	maven { url "http://maven.aliyun.com/nexus/content/groups/public/"}
 	mavenCentral()
 }
 
@@ -22,10 +32,21 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-batch'
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.3'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+	//	spring-data-jdbc mybatis中也引了这个包
+	implementation 'org.springframework.data:spring-data-jdbc'
+
+// https://mvnrepository.com/artifact/com.alibaba/druid
+	compile group: 'com.alibaba', name: 'druid', version: '1.1.24'
+
+
+	implementation 'org.webjars:bootstrap:4.0.0'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'mysql:mysql-connector-java'
@@ -36,6 +57,7 @@ dependencies {
 	}
 	testImplementation 'io.projectreactor:reactor-test'
 	testImplementation 'org.springframework.batch:spring-batch-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
 
 test {
