@@ -1,11 +1,12 @@
 package com.generator.springbootgenerator.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @author lqs
  */
-public class Baby {
+public class Baby implements Serializable {
 
     /**
      * id : 0

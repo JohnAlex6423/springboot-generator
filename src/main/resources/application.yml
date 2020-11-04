@@ -1,4 +1,7 @@
 spring:
+#  devtools:
+#    restart:
+#      enabled: false
   #禁用缓存
   thymeleaf:
     cache: false
@@ -10,8 +13,8 @@ spring:
     url: jdbc:mysql://120.26.160.119:3306/springBootGenerate
     driver-class-name: com.mysql.cj.jdbc.Driver
     #指定要执行的sql语句
-    schema:
-      - classpath:sql/dept.sql
+#    schema:
+#      - classpath:sql/dept.sql
     initialization-mode: always
     type: com.alibaba.druid.pool.DruidDataSource
     # 初始化连接池个数
@@ -73,6 +76,7 @@ spring:
     show-sql: true
 mybatis:
   configuration:
+    #开启驼峰命名法
     map-underscore-to-camel-case: true
 #  config-location: classpath:mybatis/mybatis-config.xml
 #  mapper-locations: classpath:mybatis/mapping/*.xml
@@ -81,7 +85,10 @@ person:
   name: 李青山${random.uuid}
   age: 22
   birthday: 1998/07/18
-
+lqs:
+  love:
+    prefix: l
+    suffix: qwc
 #debug: true 查看自动配置报告 分析Negative matches:
 #日志级别配置信息
 logging:
@@ -90,12 +97,16 @@ logging:
     com:
       generator: trace
 server:
+  servlet:
+    context-path: /
   error:
     include-exception: true
     include-message: always
+
 #  servlet:
 #    context-path: /boot
 #    为什么这里配置没有用，请知道的一定给予我解答
+#debug: true
 ---
 spring:
   profiles: prod
