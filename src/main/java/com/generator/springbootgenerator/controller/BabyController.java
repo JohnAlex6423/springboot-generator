@@ -22,6 +22,7 @@ public class BabyController {
     public List<Baby> getBabyList() {
         return babyService.getBaby();
     }
+
     @RequestMapping("/getBabyById/{id}")
     Baby getBabyById(@PathVariable("id") Long id) {
         Baby baby = babyService.getBabyById(id);
